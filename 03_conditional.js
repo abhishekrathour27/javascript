@@ -1,7 +1,7 @@
+const prompt = require('prompt-sync')();
 let a = prompt("Enter your name:");
-console.log("Hello, " + a + "!");
 
-if(a>0){
+if(a==22){
     console.log("Valid age")
 }
 else{
