@@ -66,6 +66,5 @@ const course = {
 }
 // console.log(course.courseName);
 const {courseName:n} = (course)
-
 console.log(n);
 

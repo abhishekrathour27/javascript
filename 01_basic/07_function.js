@@ -6,5 +6,5 @@ function sub(x,y){
 }
 let a = 15
 let b = 8
-console.log("addition of " + a + " and " + b + " is " + add(a, b))
-console.log("subtraction of " + a + " and " + b + " is " + sub(a, b))
+console.log("addition of " + a + " and " + b + " is ", add(a, b))
+console.log("subtraction of " + a + " and " + b + " is ", sub(a, b))

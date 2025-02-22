@@ -19,7 +19,7 @@ jsUser.gmail = "abhishek@amazon.com"
 // Object.freeze(jsUser)
 jsUser.gmail = "abhishek@developer.com"
 // console.log(jsUser);
-
+    
 jsUser.greeting = function(){
     console.log("hello user");
 }
