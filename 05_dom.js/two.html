@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+</head>
+<body >
+    <h2 class="heading">Click the button to change the background color</h2>
+    <button class="btn" id="colorBtn">Change Color</button>
+
+    <script>
+       let btn= document.querySelector(".btn")
+        
+        btn.addEventListener("click", function() {
+        //    document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        //   document.body.style.backgroundColor = "green"
+        const div = document.createElement("div")
+        console.log(div)
+        div.className = 'main'
+        div.style.backgroundColor = 'orange'
+        div.innerText = 'Learning Javascript'
+        div.style.margin = '8px'
+        document.body.append(div)
+        });
+    </script>
+</body>
+</html>
