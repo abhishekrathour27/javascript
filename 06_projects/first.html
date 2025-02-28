@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>Color Changing Switcher</h2>
+
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+        <span class="colorBox" id="red"
+            style="height: 100px; width: 100px; background-color: red; border: 1px solid black; cursor: pointer;">
+        </span>
+        <span class="colorBox" id="green"
+            style="height: 100px; width: 100px; background-color: green; border: 1px solid black; cursor: pointer;">
+        </span>
+        <span class="colorBox" id="white"
+            style="height: 100px; width: 100px; background-color: white; border: 1px solid black; cursor: pointer;">
+        </span>
+        <span class="colorBox" id="blue"
+            style="height: 100px; width: 100px; background-color: blue; border: 1px solid black; cursor: pointer;">
+        </span>
+    </div>
+
+    <script>
+        // Select all color boxes
+        const box = document.querySelectorAll('.colorBox')
+        const body = document.querySelector('body')
+ 
+        box.forEach((item)=>{
+            item.addEventListener('click' ,() =>{
+                if(item.id === 'red'){
+                    body.style.backgroundColor = item.id
+                }
+                if(item.id === 'green'){
+                    body.style.backgroundColor = item.id
+                }
+                if(item.id === 'white'){
+                    body.style.backgroundColor = item.id
+                }
+                if(item.id === 'blue'){
+                    body.style.backgroundColor = item.id
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
