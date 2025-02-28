@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Books</h1>
+    <ul class="add"></ul>
+    <input type="text" class="bookInput" placeholder="Enter your book name">
+    <button class="btnRef">Click me to add</button>
+
+</body>
+<script>
+    const books = ['js', 'python', 'java']
+
+    let addToUl = document.querySelector('.add')
+    let input = document.querySelector('.bookInput')
+    let btn = document.querySelector('.btnRef')
+
+    function adding() {
+        addToUl.innerHTML = ""
+        books.forEach((book) => {
+            let li = document.createElement('li')
+            li.textContent = `${book}`
+            addToUl.appendChild(li)
+        })
+    }
+
+    adding()
+    btn.addEventListener('click' , () =>{
+        let inputValue = input.value.trim()
+        books.push(inputValue)
+        input.value=""
+        adding()
+    })
+</script>
+
+</html>

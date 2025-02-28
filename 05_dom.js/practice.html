@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add an Element</title>
+</head>
+
+<body style="background-color: black; color: white;">
+
+    <h2>Book List</h2>
+    <ul class="toAddHere"></ul>
+
+    <input type="text" class="bookInput" placeholder="Enter your book name">
+    <button class="btnRef">Click me to add</button>
+
+    <script>
+        const books = ["Hindi", "English", "Maths"];
+        let areaToAdd = document.querySelector(".toAddHere");
+        let btn = document.querySelector(".btnRef");
+        let bookInput = document.querySelector(".bookInput");
+
+        // Function to populate the book list
+        function populateList() {
+            areaToAdd.innerHTML = ""; // Clear the list before updating
+            books.forEach((book) => {
+                let newLi = document.createElement("li");
+                newLi.textContent = book;
+                areaToAdd.appendChild(newLi);
+            });
+        }
+
+        // Populate the list initially
+        populateList();
+
+        // Add book on button click
+        btn.addEventListener("click", () => {
+            let newBook = bookInput.value.trim();
+            if (newBook) {
+                books.push(newBook);
+                bookInput.value = ""; // Clear input field
+                populateList();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
