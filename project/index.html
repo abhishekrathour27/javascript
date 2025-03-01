@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggle Project</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; gap: 10px; justify-content: center; align-items: center; height: 100vh;">
+        <img id="bulb" src="./img/pngfind.com-light-bulb-on-off-5303455.png" alt="Light Bulb" width="200">
+        <button id="btn" style="background-color: red; color: aliceblue; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Click me</button>
+    </div>
+
+    <script>
+        let bulb = document.getElementById("bulb");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function () {
+            if (bulb.src.includes("5303536")) {  
+                bulb.src = "./img/pngfind.com-light-bulb-on-off-5303455.png";  
+                document.body.style.backgroundColor = "white"; 
+                btn.textContent = "Turn On";  
+            } else {  
+                bulb.src = "./img/pngfind.com-light-bulb-on-off-5303536.png";  
+                document.body.style.backgroundColor = "yellow"; 
+                btn.textContent = "Turn Off";  
+            }
+        });
+    </script>
+</body>
+</html>
