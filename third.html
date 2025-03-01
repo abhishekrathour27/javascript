@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <style>
+
+    </style>
+</head>
+
+<body style="background-color: black; color: white;">
+
+    <p>Guess a number between 1 to 100</p>
+    <input type="text" placeholder="enter a number" class="input">
+    <button class="btn" type="submit">Click to submit</button>
+    <p class="output" style="height: 2rem; width: 20rem; display: flex; align-items: center; justify-content: center; border: 1px solid red;
+    border-radius: 10px;"></p>
+
+</body>
+<script>
+    const randomNum = parseInt(Math.random() * 100 + 1)
+    console.log(randomNum)
+
+    const userInput = document.querySelector('.input')
+    const btn = document.querySelector('.btn')
+    const userOutput = document.querySelector('.output')
+
+    btn.addEventListener('click', () => {
+        const userGuess = parseInt(userInput.value)
+        if (userGuess < 1 || userGuess > 100 || isNaN(userGuess)) {
+            userOutput.textContent = "enter a valid no.(1-100)"
+        }
+        if (userGuess === randomNum) {
+            userOutput.textContent = 'Congrats you Guessed right'
+            userOutput.style.backgroundcolor = 'green'
+        }
+        else if (userGuess > randomNum) {
+            userOutput.textContent = 'You guessed big no.'
+
+        }
+        else {
+            userOutput.textContent = 'You guessed small no.'
+        }
+        userInput.value = ''
+    })
+</script>
+
+</html>

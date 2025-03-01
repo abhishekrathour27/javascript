@@ -29,20 +29,31 @@
         // Select all color boxes
         const box = document.querySelectorAll('.colorBox')
         const body = document.querySelector('body')
- 
-        box.forEach((item)=>{
-            item.addEventListener('click' ,() =>{
-                if(item.id === 'red'){
-                    body.style.backgroundColor = item.id
-                }
-                if(item.id === 'green'){
-                    body.style.backgroundColor = item.id
-                }
-                if(item.id === 'white'){
-                    body.style.backgroundColor = item.id
-                }
-                if(item.id === 'blue'){
-                    body.style.backgroundColor = item.id
+
+        box.forEach((item) => {
+            item.addEventListener('click', () => {
+                // if(item.id === 'red'){
+                //     body.style.backgroundColor = item.id
+                // }
+                // if(item.id === 'green'){
+                //     body.style.backgroundColor = item.id
+                // }
+                // if(item.id === 'white'){
+                //     body.style.backgroundColor = item.id
+                // }
+                // if(item.id === 'blue'){
+                //     body.style.backgroundColor = item.id
+                // }
+
+                switch (item.id) {
+                    case 'red': body.style.backgroundColor = item.id
+                        break;
+                    case 'green': body.style.backgroundColor = item.id
+                        break;
+                    case 'white': body.style.backgroundColor = item.id
+                        break;
+                    case 'blue': body.style.backgroundColor = item.id
+                        break;
                 }
             })
         })
