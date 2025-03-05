@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <h1>Stopwatch</h1>
+    <div id="display">00:00:00</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let startInterval;
+        let seconds = 0, minutes = 0, hours = 0;
+
+        function updateDisplay() {
+            let formattedTime =
+                `${String(hours).padStart(2, '0')}:
+                 ${String(minutes).padStart(2, '0')}:
+                 ${String(seconds).padStart(2, '0')}`;
+            document.querySelector("#display").textContent = formattedTime;
+            // console.log(formattedTime);
+        }
+
+        function startTimer() {
+            if (!startInterval) {
+                startInterval = setInterval(() => {
+                    seconds++;
+                    if (seconds === 60) {
+                        seconds = 0;
+                        minutes++;
+                    }
+                    if (minutes === 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                    updateDisplay();
+                }, 1000);
+            }
+        }
+
+        function stopTimer() {
+            clearInterval(startInterval);
+            startInterval = null;
+        }
+
+        document.querySelector("#start").addEventListener("click", startTimer);
+        document.querySelector("#stop").addEventListener("click", stopTimer);
+
+        // updateDisplay(); // Initialize display
+    </script>
+
+</body>
+</html>
